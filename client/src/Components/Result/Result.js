@@ -5,7 +5,6 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -38,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   links: {
     color: 'gray'
   },
-  'fav>svg':{
+  'fav>svg': {
     pointerEvents: 'auto',
   },
   'favSvg<*': {
@@ -59,7 +58,7 @@ const Results = () => {
         direction="row"
         justify="center"
         alignItems="center"
-        spacing = {2}
+        spacing={2}
       >
 
         {
@@ -80,18 +79,16 @@ const Results = () => {
                     {description ? description : 'Description Not Available'}
                   </Typography>
                 </CardContent>
-                {/* <CardActions disableSpacing> */}
-                 
-                  <IconButton className={classes['fav>svg']}aria-label="Add to favorites" id={_id} onClick={favBook} > 
-                    <FavoriteIcon className={classes.favSvg} id={_id}/>
-                  </IconButton>
-               
-                  <a className={classes.links} href={link} rel="noopener noreferrer" target='_blank'>
+
+                <IconButton className={classes['fav>svg']} aria-label="Add to favorites" id={_id} onClick={favBook} >
+                  <FavoriteIcon className={classes.favSvg} id={_id} />
+                </IconButton>
+
+                <a className={classes.links} href={link} rel="noopener noreferrer" target='_blank'>
                   <IconButton aria-label="Share">
-                    <OpenInNew/>
+                    <OpenInNew />
                   </IconButton>
-                    </a>
-                {/* </CardActions> */}
+                </a>
               </Card>
 
             </Grid>
