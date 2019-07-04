@@ -17,7 +17,7 @@ module.exports = app => {
     Search.deleteMany({}, e => {
       if (e) throw e
     })
-    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.book}&key=${apiKey}`)
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.book}&country=US&key=${apiKey}`)
       .then(({ data: {items} }) => {
         let booksArr = []
         items.forEach(({volumeInfo: {title, authors, description, imageLinks, previewLink}}) => {
